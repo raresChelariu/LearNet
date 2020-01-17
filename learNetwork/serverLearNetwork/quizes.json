@@ -1,0 +1,22 @@
+[
+    {
+    "title": "Quiz 1",
+     "question": "Does bind attach the sockaddr given as the 2nd parameter to the socket descriptor given as the first parameter?(True/False)", 
+      "answer": "True"
+    },
+    {
+        "title" : "Quiz 2",
+        "question" : "If the connect() function fails, it returns 0. True or False?",
+        "answer" : "False"
+    },
+    {
+        "title" : "Quiz 3",
+        "question" : "Accept() is a nonblocking call. True or False?",
+        "answer" : "True"
+    },
+    {
+        "title" : "Quiz 4",
+        "question" : "Both read() and write() are blocking calls. True or False ?",
+        "answer" : "False"
+    }
+]

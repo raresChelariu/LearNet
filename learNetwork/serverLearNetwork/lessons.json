@@ -1,0 +1,22 @@
+[
+    {
+        "title" : "Lesson 1 ",
+        "description": " What does fork do ?",
+        "content" : "fork() creates a new process by duplicating the calling process.  The new process is referred to as the child process. The calling process is referred to as the parent process. The child process and the parent process run in separate memory spaces.  At the time of fork() both memory spaces have the same content. Memory writes performed by one of the processes do not affect the other."
+    },
+    {
+        "title" : "Lesson 2 ",
+        "description": " How to create a POSIX thread using pthread_create():",
+        "content" : "The four parameters to pthread_create are, in order: \n n1)  A pointer to a pthread_t structure, which pthread_create will fill out with information on the thread it creates.\n2)  A pointer to a pthread_attr_t with parameters for the thread. You can safely just pass NULL most of the time.\n3)  A function to run in the thread. The function must return void * and take a void * argument, which you may use however you see fit. (For instance, if you're starting multiple threads with the same function, you can use this parameter to distinguish them or to pass relevant data for the thread to use.) To be taken in account that when implementing it in C++, the thread's function must be static!\n4)  The void * argument of the thread runtime function that you want to start up the thread with. Pass NULL if you don't need it."
+    },
+    {
+        "title" : "Lesson 3 ",
+        "description": " Should we use bzero() in writing a client-server app?",
+        "content" : "There is no reason to prefer bzero() over memset(). memset is a standard C function while bzero has never been a C standard function. The rationale is probably because you can achieve exactly the same functionality using memset function. Now regarding efficiency, compilers like gcc use builtin implementations for memset which switch to a particular implementation when a constant 0 is detected. Same for glibc when builtins are disabled."
+    },
+    {
+        "title" : "Lesson 4 ",
+        "description": " TCP vs UDP explained briefly",
+        "content" : "TCP is a connection oriented stream over an IP network. It guarantees that all sent packets will reach the destination in the correct order. This imply the use of acknowledgement packets sent back to the sender, and automatic retransmission, causing additional delays and a general less efficient transmission than UDP.\nUDP is a connection-less protocol. Communication is datagram oriented. The integrity is guaranteed only on the single datagram. Datagrams reach destination and can arrive out of order or don't arrive at all. It is more efficient than TCP because it uses non ACK. It's generally used for real time communication, where a little percentage of packet loss rate is preferable to the overhead of a TCP connection.\nIn certain situations UDP is used because it allows broadcast packet transmission. This is sometimes fundamental in cases like DHCP protocol, because the client machine hasn't still received an IP address (this is the DHCP negotiaton protocol purpose) and there won't be any way to establish a TCP stream without the IP address itself."
+    }
+]
